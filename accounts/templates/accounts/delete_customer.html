@@ -1,0 +1,11 @@
+{% extends 'accounts/main.html' %}
+
+{%block content%}
+<form action="{%url 'delete_customer' customer.id%}" method="post">
+    {%csrf_token%}
+    Are you sure, you want to delete {{customer.name}}'s account
+    <br>
+    <a href="/customer/{{customer.id}}">Cancel</a>
+    <input class="btn btn-sm btn-primary" type="submit" value="Confirm" />
+</form>
+{%endblock%}
